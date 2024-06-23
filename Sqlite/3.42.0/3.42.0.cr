@@ -5,7 +5,7 @@ class Target < ISM::Software
 
         configureSource(arguments:  "--prefix=/usr      \
                                     --disable-static    \
-                                    --enable-fts5
+                                    --enable-fts5       \
                                     CPPFLAGS=\" -DSQLITE_ENABLE_COLUMN_METADATA=1 \\
                                                 -DSQLITE_ENABLE_UNLOCK_NOTIFY=1 \\
                                                 -DSQLITE_ENABLE_DBSTAT_VTAB=1 \\
