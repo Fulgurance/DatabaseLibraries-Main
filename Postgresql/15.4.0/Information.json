@@ -8,6 +8,12 @@
   "installedFiles": [],
   "dependencies": [
     {
+      "port": "SystemUsers-Main",
+      "name": "Postgresql",
+      "version": ">=0.1.0",
+      "options": []
+    },
+    {
       "port": "SystemBase-Main",
       "name": "SystemBase",
       "version": ">=0.2.0",
