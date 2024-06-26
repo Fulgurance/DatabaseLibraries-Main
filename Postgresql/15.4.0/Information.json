@@ -9,7 +9,7 @@
   "dependencies": [
     {
       "port": "SystemUsers-Main",
-      "name": "Postgresql",
+      "name": "Postgres",
       "version": ">=0.1.0",
       "options": []
     },
