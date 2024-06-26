@@ -1,0 +1,25 @@
+class Target < ISM::Software
+    
+    def configure
+        super
+
+        configureSource(arguments:  "--prefix=/usr          \
+                                    --enable-thread-safety  \
+                                    --docdir=/usr/share/doc/postgresql-15.4",
+                        path:       buildDirectoryPath)
+    end
+    
+    def build
+        super
+
+        makeSource(path: buildDirectoryPath)
+    end
+    
+    def prepareInstallation
+        super
+
+        makeSource( arguments:  "DESTDIR=#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath} install",
+                    path:       buildDirectoryPath)
+    end
+
+end
