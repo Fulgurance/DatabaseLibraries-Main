@@ -11,11 +11,9 @@ class Target < ISM::Software
         runMesonCommand(arguments:  "setup --reconfigure                                                        \
                                     --prefix=/usr                                                               \
                                     --buildtype=release                                                         \
-                                    -Dintrospection=#{option("Gobject-Introspection") ? "enabled" : "disabled"} \
                                     -Dtap_tests=disabled                                                        \
                                     -Ddocs=disabled                                                             \
                                     -Ddocs_pdf=disabled                                                         \
-                                    -Ddocs_html_style=disabled                                                  \
                                     -Dgssapi=enabled                                                            \
                                     -Dsystemd=disabled                                                          \
                                     ..",
