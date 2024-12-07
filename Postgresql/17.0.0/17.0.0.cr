@@ -1,25 +1,39 @@
 class Target < ISM::Software
-    
+
+    def prepare
+        @buildDirectory = true
+        super
+    end
+
     def configure
         super
 
-        configureSource(arguments:  "--prefix=/usr          \
-                                    --enable-thread-safety  \
-                                    --docdir=/usr/share/doc/#{versionName}",
+        runMesonCommand(arguments:  "setup --reconfigure                                                        \
+                                    --prefix=/usr                                                               \
+                                    --buildtype=release                                                         \
+                                    -Dintrospection=#{option("Gobject-Introspection") ? "enabled" : "disabled"} \
+                                    -Dtap_tests=disabled                                                        \
+                                    -Ddocs=disabled                                                             \
+                                    -Ddocs_pdf=disabled                                                         \
+                                    -Ddocs_html_style=disabled                                                  \
+                                    -Dgssapi=enabled                                                            \
+                                    -Dsystemd=disabled                                                          \
+                                    ..",
                         path:       buildDirectoryPath)
     end
-    
+
     def build
         super
 
-        makeSource(path: buildDirectoryPath)
+        runNinjaCommand(path: buildDirectoryPath)
     end
-    
+
     def prepareInstallation
         super
 
-        makeSource( arguments:  "DESTDIR=#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath} install",
-                    path:       buildDirectoryPath)
+        runNinjaCommand(arguments:      "install",
+                        path:           buildDirectoryPath,
+                        environment:    {"DESTDIR" => "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}"})
     end
 
 end
