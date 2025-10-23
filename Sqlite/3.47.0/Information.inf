@@ -1,0 +1,19 @@
+PORT
+    DatabaseLibraries-Main
+NAME
+    Sqlite
+VERSION
+    3.47.0
+ARCHITECTURES
+    x86_64
+DESCRIPTION
+    C-language library that implements a small, fast, self-contained, high-reliability, full-featured, SQL database engine
+WEBSITE
+    https://sqlite.org
+DEPENDENCIES
+        @SystemBase-Main:SystemBase>=0.2.0
+KERNELDEPENDENCIES
+OPTIONS
+UNIQUEDEPENDENCIES
+UNIQUEOPTIONS
+ALLOWCODEPENDENCIES

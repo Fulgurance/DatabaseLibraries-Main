@@ -1,0 +1,26 @@
+PORT
+    DatabaseLibraries-Main
+NAME
+    Postgresql
+VERSION
+    15.4.0
+ARCHITECTURES
+    x86_64
+DESCRIPTION
+    Powerful, open source object-relational database system
+WEBSITE
+    https://www.postgresql.org/
+DEPENDENCIES
+        @SystemUsers-Main:Postgres>=0.1.0
+        @SystemBase-Main:SystemBase>=0.2.0
+KERNELDEPENDENCIES
+OPTIONS
+    name: Server
+    description: Enable server support
+    active: false
+    dependencies:
+    kernelDependencies:
+
+UNIQUEDEPENDENCIES
+UNIQUEOPTIONS
+ALLOWCODEPENDENCIES
