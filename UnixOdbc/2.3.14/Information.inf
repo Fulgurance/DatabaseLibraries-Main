@@ -1,0 +1,19 @@
+PORT
+    DatabaseLibraries-Main
+NAME
+    UnixOdbc
+VERSION
+    2.3.14
+ARCHITECTURES
+    x86_64
+DESCRIPTION
+    Open Source ODBC sub-system and an ODBC SDK for Linux, Mac OSX, and UNIX
+WEBSITE
+    https://github.com/lurcher/unixODBC
+DEPENDENCIES
+        @SystemBase-Main:SystemBase>=0.2.0
+KERNELDEPENDENCIES
+OPTIONS
+UNIQUEDEPENDENCIES
+UNIQUEOPTIONS
+ALLOWCODEPENDENCIES
